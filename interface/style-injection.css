@@ -1,0 +1,42 @@
+/* --- STYLE INJECTÉ PAR PLATON CLEANER --- */
+
+/* 1. Le Viseur (Au survol) */
+/* Ton collègue doit ajouter cette classe en JS au survol */
+.platon-hover-target {
+    outline: 4px solid #e74c3c !important;
+    /* Rouge Platon */
+    outline-offset: -4px !important;
+    cursor: crosshair !important;
+    background-color: rgba(231, 76, 60, 0.2) !important;
+    /* Fond rouge léger */
+    box-shadow: 0 0 20px rgba(231, 76, 60, 0.5) !important;
+    transition: all 0.1s ease !important;
+    z-index: 2147483647 !important;
+    /* Maximum possible */
+}
+
+/* 2. L'Animation de suppression (Au clic) */
+.platon-removing {
+    animation: platon-vanish 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
+    pointer-events: none !important;
+    transform-origin: center !important;
+}
+
+@keyframes platon-vanish {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        filter: grayscale(0);
+    }
+
+    50% {
+        transform: scale(0.9);
+        opacity: 0.5;
+        filter: grayscale(100%);
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}

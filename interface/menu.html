@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Platon</title>
+    <link rel="stylesheet" href="menu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <div class="main-container">
+
+        <div class="header">
+            <div class="header-content">
+                <img src="../images/icone-48.png" alt="Logo" class="logo-img">
+                <div>
+                    <h1>Platon Formation</h1>
+                    <p>Nettoyeur Web</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="actions-list">
+
+            <label class="card action-row" style="cursor: pointer;">
+                <div class="action-left">
+                    <span id="status-icon" class="material-symbols-outlined icon-grey">cleaning_services</span>
+                    <div>
+                        <p class="action-title">Mode Nettoyage</p>
+                        <p id="status-text" class="action-subtitle">Désactivé</p>
+                    </div>
+                </div>
+                <div class="toggle-wrapper">
+                    <input type="checkbox" id="toggle-cleaning" class="toggle-checkbox" />
+                    <span class="toggle-label"></span>
+                </div>
+            </label>
+
+            <div id="btn-reset" class="card action-row hover-effect">
+                <div class="action-left">
+                    <span class="material-symbols-outlined icon-dark">restart_alt</span>
+                    <span class="action-title">Réinitialiser cette page</span>
+                </div>
+            </div>
+
+            <div id="btn-settings" class="card action-row hover-effect">
+                <div class="action-left">
+                    <span class="material-symbols-outlined icon-dark">settings</span>
+                    <span class="action-title">Gérer les sites</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p>Hackathon Nuit de l'Info</p>
+        </div>
+
+    </div>
+
+    <script src="menu.js"></script>
+</body>
+
+</html>

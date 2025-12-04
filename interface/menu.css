@@ -1,0 +1,164 @@
+/* --- BASE --- */
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f8f9fa;
+    margin: 0;
+    width: 320px;
+    color: #333;
+}
+
+.main-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- HEADER --- */
+.header {
+    background: linear-gradient(135deg, #343433 0%, #5a3e54 100%);
+    padding: 16px;
+    color: white;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    width: 48px;
+    height: 48px;
+    background: white;
+    border-radius: 50%;
+    padding: 2px;
+    object-fit: contain;
+}
+
+h1 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.header p {
+    margin: 0;
+    font-size: 11px;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+/* --- LISTE ET CARTES --- */
+.actions-list {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    padding: 12px;
+    transition: 0.2s;
+}
+
+.action-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hover-effect:hover {
+    background-color: #f3f4f6;
+    cursor: pointer;
+}
+
+.action-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.action-title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.action-subtitle {
+    margin: 0;
+    font-size: 11px;
+    color: #9ca3af;
+}
+
+.icon-grey {
+    color: #9ca3af;
+    font-size: 24px;
+}
+
+.icon-dark {
+    color: #4b5563;
+}
+
+/* --- STYLE DU TOGGLE SWITCH --- */
+.toggle-wrapper {
+    position: relative;
+}
+
+.toggle-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.toggle-label {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 9999px;
+    transition: 0.3s;
+    cursor: pointer;
+    display: block;
+}
+
+.toggle-label:before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* État ACTIF (Violet Platon) */
+.toggle-checkbox:checked+.toggle-label {
+    background-color: #952E7D;
+}
+
+.toggle-checkbox:checked+.toggle-label:before {
+    transform: translateX(20px);
+}
+
+/* --- FOOTER --- */
+.footer {
+    padding: 10px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer p {
+    font-size: 10px;
+    color: #9ca3af;
+    margin: 0;
+}

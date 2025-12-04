@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paramètres - Platon Nettoyeur</title>
+    <link rel="stylesheet" href="parametres.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-section">
+                <img src="../images/icone-48.png" alt="Logo" class="logo-img">
+                <div>
+                    <h1>Platon Nettoyeur Web</h1>
+                    <p>Gérez vos sites nettoyés</p>
+                </div>
+            </div>
+            <button id="btn-reset-all" class="btn-danger-outline">
+                <span class="material-symbols-outlined">delete_forever</span>
+                Tout Réinitialiser
+            </button>
+        </header>
+
+        <main>
+            <h2>Sites gérés</h2>
+            <div id="table-container" class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 40%">Site Web</th>
+                            <th style="width: 30%">Statut</th>
+                            <th style="width: 30%; text-align: right;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-sites"></tbody>
+                </table>
+            </div>
+
+            <div id="empty-state" class="empty-state hidden">
+                <div class="icon-circle">
+                    <span class="material-symbols-outlined">search_off</span>
+                </div>
+                <h3>C'est tout propre !</h3>
+                <p>Aucun site n'est nettoyé pour l'instant.</p>
+                <p class="sub-text">Activez l'extension sur un site pour le voir apparaître ici.</p>
+            </div>
+        </main>
+        <footer>
+            Nuit de l'Info 2025 - FC PHP MAFIA
+        </footer>
+    </div>
+    <script src="parametres.js"></script>
+</body>
+
+</html>

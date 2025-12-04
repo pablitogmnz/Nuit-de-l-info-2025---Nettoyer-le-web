@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Platon Web Cleaner",
+    "version": "1.0",
+    "description": "Nettoyez le web comme VOUS l'entendez !",
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "action": {
+        "default_popup": "interface/menu.html",
+        "default_icon": "images/icone-128.png"
+    },
+    "options_page": "interface/parametres.html",
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "logique/nettoyeur.js"
+            ],
+            "css": [
+                "interface/menu.css"
+            ]
+        }
+    ]
+}
