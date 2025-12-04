@@ -12,52 +12,104 @@
 </head>
 
 <body>
-    <div class="main-container">
-
-        <div class="header">
-            <div class="header-content">
-                <img src="../images/icone-48.png" alt="Logo" class="logo-img">
-                <div>
-                    <h1>Platon Formation</h1>
-                    <p>Nettoyeur Web</p>
-                </div>
+    <div class="header">
+        <div class="header-content">
+            <img src="../images/icone-48.png" alt="Logo" class="logo-img">
+            <div>
+                <h1>Platon Formation</h1>
+                <p>Nettoyeur Web</p>
             </div>
         </div>
+    </div>
 
-        <div class="actions-list">
+    <div class="content-wrapper">
 
-            <label class="card action-row" style="cursor: pointer;">
-                <div class="action-left">
-                    <span id="status-icon" class="material-symbols-outlined icon-grey">cleaning_services</span>
-                    <div>
-                        <p class="action-title">Mode Nettoyage</p>
-                        <p id="status-text" class="action-subtitle">Désactivé</p>
+        <div id="view-main" class="view">
+            <div class="actions-list">
+
+                <label class="card action-row" style="cursor: pointer;">
+                    <div class="action-left">
+                        <span id="status-icon" class="material-symbols-outlined icon-grey">cleaning_services</span>
+                        <div>
+                            <p class="action-title">Mode Nettoyage</p>
+                            <p id="status-text" class="action-subtitle">Désactivé</p>
+                        </div>
+                    </div>
+                    <div class="toggle-wrapper">
+                        <input type="checkbox" id="toggle-cleaning" class="toggle-checkbox" />
+                        <span class="toggle-label"></span>
+                    </div>
+                </label>
+
+                <div id="btn-reset" class="card action-row hover-effect">
+                    <div class="action-left">
+                        <span class="material-symbols-outlined icon-dark">restart_alt</span>
+                        <span class="action-title">Réinitialiser cette page</span>
                     </div>
                 </div>
-                <div class="toggle-wrapper">
-                    <input type="checkbox" id="toggle-cleaning" class="toggle-checkbox" />
-                    <span class="toggle-label"></span>
-                </div>
-            </label>
 
-            <div id="btn-reset" class="card action-row hover-effect">
-                <div class="action-left">
-                    <span class="material-symbols-outlined icon-dark">restart_alt</span>
-                    <span class="action-title">Réinitialiser cette page</span>
+                <div id="btn-settings" class="card action-row hover-effect">
+                    <div class="action-left">
+                        <span class="material-symbols-outlined icon-dark">settings</span>
+                        <span class="action-title">Gérer tous les sites</span>
+                    </div>
                 </div>
-            </div>
 
-            <div id="btn-settings" class="card action-row hover-effect">
-                <div class="action-left">
-                    <span class="material-symbols-outlined icon-dark">settings</span>
-                    <span class="action-title">Gérer les sites</span>
+                <div id="btn-more" class="card action-row hover-effect" style="justify-content: space-between;">
+                    <div class="action-left">
+                        <span class="material-symbols-outlined" style="color: #952E7D;">add_circle</span>
+                        <span class="action-title" style="color: #952E7D;">Plus d'options</span>
+                    </div>
+                    <span class="material-symbols-outlined icon-grey">chevron_right</span>
                 </div>
             </div>
 
+            <div class="footer">
+                <p>Hackathon Nuit de l'Info</p>
+            </div>
         </div>
 
-        <div class="footer">
-            <p>Hackathon Nuit de l'Info</p>
+        <div id="view-options" class="view view-right">
+
+            <div class="sub-header">
+                <div id="btn-back" class="back-button hover-effect">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                    <span>Retour</span>
+                </div>
+                <span class="sub-title">Options Avancées</span>
+            </div>
+
+            <div class="actions-list">
+
+                <button id="btn-compare-toggle" class="btn-compare-mode">
+                    <span class="material-symbols-outlined">visibility</span>
+                    <span id="txt-compare">Voir la page d'origine</span>
+                </button>
+
+                <hr style="border:0; border-top:1px solid #eee; margin: 5px 0;">
+
+                <label class="card action-row hover-effect">
+                    <div class="action-left">
+                        <span class="material-symbols-outlined icon-dark">grid_off</span>
+                        <div class="text-col">
+                            <span class="action-title">Voir zones masquées</span>
+                            <span class="action-subtitle">Afficher en transparence</span>
+                        </div>
+                    </div>
+                    <input type="checkbox" id="check-show-hidden" class="checkbox-bonus">
+                </label>
+
+                <label class="card action-row hover-effect">
+                    <div class="action-left">
+                        <span class="material-symbols-outlined icon-dark">pause_circle</span>
+                        <div class="text-col">
+                            <span class="action-title">Pause temporaire</span>
+                            <span class="action-subtitle">Désactiver sans perdre</span>
+                        </div>
+                    </div>
+                    <input type="checkbox" id="check-pause" class="checkbox-bonus">
+                </label>
+            </div>
         </div>
 
     </div>

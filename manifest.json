@@ -13,7 +13,7 @@
     ],
     "action": {
         "default_popup": "interface/menu.html",
-        "default_icon": "images/icone-128.png"
+        "default_icon": "assets/logoplaton.png"
     },
     "options_page": "interface/parametres.html",
     "content_scripts": [

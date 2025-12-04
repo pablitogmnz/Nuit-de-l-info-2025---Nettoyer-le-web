@@ -1,26 +1,37 @@
 document.addEventListener('DOMContentLoaded', async () => {
+    // Éléments
     const toggle = document.getElementById('toggle-cleaning');
     const statusText = document.getElementById('status-text');
     const statusIcon = document.getElementById('status-icon');
     const btnReset = document.getElementById('btn-reset');
+
+    // Navigation
+    const btnMore = document.getElementById('btn-more');
+    const btnBack = document.getElementById('btn-back');
     const btnSettings = document.getElementById('btn-settings');
 
-    // Variable pour stocker l'onglet, null en mode test
-    let currentTabId = null;
+    // Bonus & Nouveau Bouton Compare
+    const btnCompareToggle = document.getElementById('btn-compare-toggle');
+    const txtCompare = document.getElementById('txt-compare');
+    const checkShowHidden = document.getElementById('check-show-hidden');
+    const checkPause = document.getElementById('check-pause');
 
-    // TENTATIVE DE CONNEXION À CHROME (Sécurisée)
+    // Connexion Chrome
+    let currentTabId = null;
     try {
         if (typeof chrome !== "undefined" && chrome.tabs) {
             const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
             if (tab) currentTabId = tab.id;
         }
-    } catch (e) {
-        console.log("Mode Design : API Chrome non disponible.");
-    }
+    } catch (e) { console.log("Mode Design"); }
 
-    // --- FONCTION UI (Mise à jour visuelle) ---
+    // --- NAVIGATION FLUIDE ---
+    btnMore.addEventListener('click', () => document.body.classList.add('show-options'));
+    btnBack.addEventListener('click', () => document.body.classList.remove('show-options'));
+
+    // --- LOGIQUE PRINCIPALE ---
     function updateUI(isEditing) {
-        toggle.checked = isEditing; // Force l'état visuel du switch
+        toggle.checked = isEditing;
         if (isEditing) {
             statusText.textContent = "Activé";
             statusText.style.color = "#952E7D";
@@ -32,45 +43,55 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    // --- ACTION DU TOGGLE (SWITCH) ---
     toggle.addEventListener('change', () => {
         const isActive = toggle.checked;
-
-        // 1. D'abord on met à jour l'interface (Feedback immédiat)
         updateUI(isActive);
-
-        // 2. Ensuite on essaie d'envoyer le message
-        const action = isActive ? "ACTIVER_MODE_EDITION" : "DESACTIVER_MODE_EDITION";
-
-        if (currentTabId) {
-            chrome.tabs.sendMessage(currentTabId, { action: action });
-        } else {
-            console.log(`[Simulation] Envoi de l'ordre : ${action}`);
-        }
+        sendMessageToBack(isActive ? "ACTIVER_MODE_EDITION" : "DESACTIVER_MODE_EDITION");
     });
 
-    // --- BOUTON RESET ---
     btnReset.addEventListener('click', () => {
-        // Petit effet visuel pour montrer le clic
-        btnReset.style.backgroundColor = "#f3f4f6";
-        setTimeout(() => btnReset.style.backgroundColor = "white", 200);
-
         if (confirm("Réinitialiser cette page ?")) {
-            if (currentTabId) {
-                chrome.tabs.sendMessage(currentTabId, { action: "RESET_PAGE_ACTUELLE" });
-            } else {
-                console.log("[Simulation] Ordre : RESET_PAGE_ACTUELLE");
-            }
+            sendMessageToBack("RESET_PAGE_ACTUELLE");
         }
     });
 
-    // --- BOUTON PARAMÈTRES ---
     btnSettings.addEventListener('click', () => {
-        if (typeof chrome !== "undefined" && chrome.runtime && chrome.runtime.openOptionsPage) {
-            chrome.runtime.openOptionsPage();
-        } else {
-            // En mode test Ctrl+O, on ouvre le fichier localement pour que tu puisses voir
-            window.location.href = "parametres.html";
-        }
+        if (typeof chrome !== "undefined" && chrome.runtime) chrome.runtime.openOptionsPage();
+        else window.location.href = "parametres.html";
     });
+
+    // --- LOGIQUE BONUS ---
+
+    // Bonus 1 : NOUVEAU BOUTON AVANT / APRÈS
+    let isComparing = false;
+    btnCompareToggle.addEventListener('click', () => {
+        isComparing = !isComparing;
+
+        // Changement Visuel
+        if (isComparing) {
+            btnCompareToggle.classList.add('active');
+            txtCompare.textContent = "Retour au résultat nettoyé";
+            btnCompareToggle.querySelector('span').textContent = "cleaning_services"; // Change icône
+        } else {
+            btnCompareToggle.classList.remove('active');
+            txtCompare.textContent = "Voir la page d'origine";
+            btnCompareToggle.querySelector('span').textContent = "visibility"; // Remet icône oeil
+        }
+
+        // Envoi de l'ordre (true = montrer l'original, false = cacher l'original)
+        sendMessageToBack("TOGGLE_AVANT_APRES", { value: isComparing });
+    });
+
+    // Bonus 2 & 3
+    checkShowHidden.addEventListener('change', () => sendMessageToBack("TOGGLE_VISUALISER_CACHES", { value: checkShowHidden.checked }));
+    checkPause.addEventListener('change', () => sendMessageToBack("TOGGLE_PAUSE", { value: checkPause.checked }));
+
+    // Helper
+    function sendMessageToBack(actionName, extraData = {}) {
+        if (currentTabId) {
+            chrome.tabs.sendMessage(currentTabId, { action: actionName, ...extraData });
+        } else {
+            console.log(`[Simulation] ${actionName}`, extraData);
+        }
+    }
 });
