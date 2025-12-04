@@ -1,21 +1,27 @@
 /* --- STYLE INJECTÉ PAR PLATON CLEANER --- */
 
-/* 1. Le Viseur (Au survol) */
-/* Ton collègue doit ajouter cette classe en JS au survol */
+/* 1. Mode Nettoyage (Cadre Rouge) */
 .platon-hover-target {
     outline: 4px solid #e74c3c !important;
-    /* Rouge Platon */
     outline-offset: -4px !important;
     cursor: crosshair !important;
     background-color: rgba(231, 76, 60, 0.2) !important;
-    /* Fond rouge léger */
     box-shadow: 0 0 20px rgba(231, 76, 60, 0.5) !important;
     transition: all 0.1s ease !important;
     z-index: 2147483647 !important;
-    /* Maximum possible */
 }
 
-/* 2. L'Animation de suppression (Au clic) */
+/* 2. Mode Loupe (Cadre Bleu) - NOUVEAU */
+.platon-zoom-target {
+    outline: 4px solid #3498db !important;
+    outline-offset: -4px !important;
+    cursor: zoom-in !important;
+    background-color: rgba(52, 152, 219, 0.2) !important;
+    transition: all 0.1s ease !important;
+    z-index: 2147483647 !important;
+}
+
+/* 3. L'Animation de suppression (Au clic) */
 .platon-removing {
     animation: platon-vanish 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
     pointer-events: none !important;
