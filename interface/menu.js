@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const btnBack = document.getElementById('btn-back');
     const btnSettings = document.getElementById('btn-settings');
 
-    // Bonus & Nouveau Bouton Compare
+    // Bonus
     const btnCompareToggle = document.getElementById('btn-compare-toggle');
     const txtCompare = document.getElementById('txt-compare');
     const checkShowHidden = document.getElementById('check-show-hidden');
@@ -21,15 +21,31 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         if (typeof chrome !== "undefined" && chrome.tabs) {
             const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-            if (tab) currentTabId = tab.id;
+            if (tab) {
+                currentTabId = tab.id;
+                // ASTUCE : On demande l'état actuel au script pour mettre à jour le bouton
+                verifierEtatDuScript(currentTabId);
+            }
         }
     } catch (e) { console.log("Mode Design"); }
 
-    // --- NAVIGATION FLUIDE ---
+    // --- FONCTION QUI VÉRIFIE SI C'EST DÉJÀ ALLUMÉ ---
+    function verifierEtatDuScript(tabId) {
+        // On envoie un petit message "PING" pour demander l'état
+        chrome.tabs.sendMessage(tabId, { action: "GET_STATUS" }, (response) => {
+            if (chrome.runtime.lastError) return; // Le script n'est pas encore prêt
+            if (response && response.isEditing) {
+                // Si le script dit "Je suis allumé", on allume le bouton visuellement
+                updateUI(true);
+            }
+        });
+    }
+
+    // --- NAVIGATION ---
     btnMore.addEventListener('click', () => document.body.classList.add('show-options'));
     btnBack.addEventListener('click', () => document.body.classList.remove('show-options'));
 
-    // --- LOGIQUE PRINCIPALE ---
+    // --- UI ---
     function updateUI(isEditing) {
         toggle.checked = isEditing;
         if (isEditing) {
@@ -43,16 +59,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
+    // --- SWITCH ---
     toggle.addEventListener('change', () => {
         const isActive = toggle.checked;
         updateUI(isActive);
         sendMessageToBack(isActive ? "ACTIVER_MODE_EDITION" : "DESACTIVER_MODE_EDITION");
     });
 
+    // --- BUTTONS ---
     btnReset.addEventListener('click', () => {
-        if (confirm("Réinitialiser cette page ?")) {
-            sendMessageToBack("RESET_PAGE_ACTUELLE");
-        }
+        if (confirm("Réinitialiser cette page ?")) sendMessageToBack("RESET_PAGE_ACTUELLE");
     });
 
     btnSettings.addEventListener('click', () => {
@@ -60,33 +76,27 @@ document.addEventListener('DOMContentLoaded', async () => {
         else window.location.href = "parametres.html";
     });
 
-    // --- LOGIQUE BONUS ---
-
-    // Bonus 1 : NOUVEAU BOUTON AVANT / APRÈS
+    // --- BONUS ---
     let isComparing = false;
-    btnCompareToggle.addEventListener('click', () => {
-        isComparing = !isComparing;
+    if (btnCompareToggle) {
+        btnCompareToggle.addEventListener('click', () => {
+            isComparing = !isComparing;
+            if (isComparing) {
+                btnCompareToggle.classList.add('active');
+                txtCompare.textContent = "Retour au résultat nettoyé";
+                btnCompareToggle.querySelector('span').textContent = "cleaning_services";
+            } else {
+                btnCompareToggle.classList.remove('active');
+                txtCompare.textContent = "Voir la page d'origine";
+                btnCompareToggle.querySelector('span').textContent = "visibility";
+            }
+            sendMessageToBack("TOGGLE_AVANT_APRES", { value: isComparing });
+        });
+    }
 
-        // Changement Visuel
-        if (isComparing) {
-            btnCompareToggle.classList.add('active');
-            txtCompare.textContent = "Retour au résultat nettoyé";
-            btnCompareToggle.querySelector('span').textContent = "cleaning_services"; // Change icône
-        } else {
-            btnCompareToggle.classList.remove('active');
-            txtCompare.textContent = "Voir la page d'origine";
-            btnCompareToggle.querySelector('span').textContent = "visibility"; // Remet icône oeil
-        }
+    if (checkShowHidden) checkShowHidden.addEventListener('change', () => sendMessageToBack("TOGGLE_VISUALISER_CACHES", { value: checkShowHidden.checked }));
+    if (checkPause) checkPause.addEventListener('change', () => sendMessageToBack("TOGGLE_PAUSE", { value: checkPause.checked }));
 
-        // Envoi de l'ordre (true = montrer l'original, false = cacher l'original)
-        sendMessageToBack("TOGGLE_AVANT_APRES", { value: isComparing });
-    });
-
-    // Bonus 2 & 3
-    checkShowHidden.addEventListener('change', () => sendMessageToBack("TOGGLE_VISUALISER_CACHES", { value: checkShowHidden.checked }));
-    checkPause.addEventListener('change', () => sendMessageToBack("TOGGLE_PAUSE", { value: checkPause.checked }));
-
-    // Helper
     function sendMessageToBack(actionName, extraData = {}) {
         if (currentTabId) {
             chrome.tabs.sendMessage(currentTabId, { action: actionName, ...extraData });

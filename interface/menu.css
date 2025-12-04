@@ -1,45 +1,59 @@
-/* --- BASE --- */
+/* --- BASE & RESET --- */
 body {
     font-family: 'Inter', sans-serif;
     background: #f8f9fa;
     margin: 0;
+    padding: 0;
+
+    /* TAILLE FIXE OPTIMISÉE */
     width: 320px;
-    height: 380px;
-    /* <--- HAUTEUR RÉDUITE POUR ÉVITER LE VIDE */
+    height: 420px;
+    /* Un peu plus grand pour éviter le scroll */
     color: #333;
     overflow: hidden;
+    /* Coupe tout ce qui dépasse */
 }
 
-/* --- HEADER FIXE --- */
+/* CACHER LA SCROLLBAR (Le secret d'un design propre) */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* --- HEADER FIXE (Design Courbe) --- */
 .header {
     background: linear-gradient(135deg, #343433 0%, #5a3e54 100%);
     padding: 16px;
     color: white;
-    height: 80px;
+    height: 85px;
     box-sizing: border-box;
     position: relative;
     z-index: 10;
+
+    /* PETITE TOUCHE ESTHÉTIQUE : On arrondit le bas du header */
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .header-content {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
 }
 
+/* Logo propre sans fond blanc */
 .logo-img {
     width: 48px;
     height: 48px;
-    background: white;
-    border-radius: 50%;
-    padding: 2px;
     object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 h1 {
     margin: 0;
     font-size: 16px;
     font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 .header p {
@@ -49,12 +63,12 @@ h1 {
     font-weight: 400;
 }
 
-/* --- SYSTÈME DE VUES (SLIDE) --- */
+/* --- ZONE DE CONTENU (SLIDE) --- */
 .content-wrapper {
     position: relative;
     width: 100%;
-    height: calc(380px - 80px);
-    /* Ajusté à la nouvelle hauteur */
+    /* On calcule la hauteur restante */
+    height: calc(420px - 85px);
     overflow: hidden;
 }
 
@@ -64,12 +78,16 @@ h1 {
     width: 100%;
     height: 100%;
     overflow-y: auto;
+    /* Scroll interne invisible si besoin */
     transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
     background: #f8f9fa;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
+
+    /* Pour que le scroll interne soit fluide */
+    scrollbar-width: none;
 }
 
-/* Position par défaut */
+/* Positions des vues */
 #view-main {
     left: 0;
 }
@@ -78,7 +96,7 @@ h1 {
     left: 100%;
 }
 
-/* CLASSE ACTIVE (Quand on slide) */
+/* Animation Slide */
 body.show-options #view-main {
     transform: translateX(-100%);
 }
@@ -87,20 +105,22 @@ body.show-options #view-options {
     transform: translateX(-100%);
 }
 
-/* --- CONTENU --- */
+/* --- LISTE DES ACTIONS --- */
 .actions-list {
-    padding: 16px;
+    padding: 20px 16px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .card {
     background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    padding: 12px;
-    transition: 0.2s;
+    border-radius: 12px;
+    /* Coins bien ronds */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    padding: 14px;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(0, 0, 0, 0.02);
 }
 
 .action-row {
@@ -110,7 +130,8 @@ body.show-options #view-options {
 }
 
 .hover-effect:hover {
-    background-color: #f3f4f6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     cursor: pointer;
 }
 
@@ -147,15 +168,15 @@ body.show-options #view-options {
     color: #4b5563;
 }
 
-/* --- NOUVEAU BOUTON COMPARE (AVANT/APRÈS) --- */
+/* --- NOUVEAU BOUTON COMPARE --- */
 .btn-compare-mode {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
     width: 100%;
-    padding: 12px;
-    border-radius: 8px;
+    padding: 14px;
+    border-radius: 12px;
     font-weight: 600;
     font-size: 14px;
     cursor: pointer;
@@ -165,18 +186,17 @@ body.show-options #view-options {
     color: #952E7D;
 }
 
-/* État actif (Quand on voit l'original) */
 .btn-compare-mode.active {
     background-color: #952E7D;
     color: white;
 }
 
-/* --- SOUS-HEADER --- */
+/* --- SOUS-HEADER (Retour) --- */
 .sub-header {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 10px 16px;
+    padding: 15px 16px;
     border-bottom: 1px solid #e5e7eb;
     background: white;
     color: #952E7D;
@@ -186,16 +206,21 @@ body.show-options #view-options {
     display: flex;
     align-items: center;
     gap: 5px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     cursor: pointer;
-    padding: 5px 10px;
-    border-radius: 4px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: rgba(149, 46, 125, 0.05);
+}
+
+.back-button:hover {
+    background: rgba(149, 46, 125, 0.1);
 }
 
 .sub-title {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     color: #333;
     margin-left: auto;
 }
@@ -217,8 +242,8 @@ body.show-options #view-options {
     position: relative;
     width: 44px;
     height: 24px;
-    background-color: #ccc;
-    border-radius: 9999px;
+    background-color: #e5e7eb;
+    border-radius: 99px;
     transition: 0.3s;
     cursor: pointer;
     display: block;
@@ -234,7 +259,7 @@ body.show-options #view-options {
     background-color: white;
     border-radius: 50%;
     transition: 0.3s;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .toggle-checkbox:checked+.toggle-label {
@@ -258,6 +283,7 @@ body.show-options #view-options {
     padding: 10px;
     text-align: center;
     margin-top: auto;
+    opacity: 0.6;
 }
 
 .footer p {
