@@ -1,10 +1,7 @@
 <p align="center">
   <img src="assets/logo_grand_platon.png" alt="Logo Platon Formation" height="100" style="margin: 0 20px;" />
   <img src="assets/logo_ndi.png" alt="Logo Nuit de l'Info" height="100" style="margin: 0 20px;" />
-  <img src="assets/logo_fcphpmafia.png" alt="Logo FC PHP MAFIA" height="100" style="margin: 0 20px;" />
 </p>
-
-<h1 align="center">🧹 Platon Web Cleaner</h1>
 
 <p align="center">
   <strong>Nettoyez le web comme VOUS l'entendez !</strong><br>
