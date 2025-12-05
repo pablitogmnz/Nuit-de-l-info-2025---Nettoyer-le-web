@@ -1,7 +1,6 @@
 <p align="center">
   <img src="assets/logoplaton.png" alt="Logo Platon Formation" width="150" style="margin: 0 30px;" />
-  <img src="assets/logo_fcphpmafia.png" alt="Platon Web Cleaner" width="150" style="margin: 0 30px;" />
-  <img src="assets/logoiutbayonne.png" alt="FC PHP MAFIA" width="150" style="margin: 0 30px;" />
+  <img src="assets/logo_ndi.png" alt="Logo NDI 2025" width="150" style="margin: 0 30px;" />
 </p>
 
 <p align="center">
