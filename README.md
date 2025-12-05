@@ -1,11 +1,14 @@
 <p align="center">
-  <img src="assets/logo_grand_platon.png" alt="Logo Platon Formation" width="150" style="margin: 0 30px;" />
-  <img src="assets/logo_ndi.png" alt="Logo NDI 2025" width="150" style="margin: 0 30px;" />
+  <img src="assets/logo_grand_platon.png" alt="Logo Platon Formation" height="100" style="margin: 0 20px;" />
+  <img src="assets/logo_ndi.png" alt="Logo Nuit de l'Info" height="100" style="margin: 0 20px;" />
+  <img src="assets/logo_fcphpmafia.png" alt="Logo FC PHP MAFIA" height="100" style="margin: 0 20px;" />
 </p>
+
+<h1 align="center">🧹 Platon Web Cleaner</h1>
 
 <p align="center">
   <strong>Nettoyez le web comme VOUS l'entendez !</strong><br>
-  Projet Nuit de l'Info 2025 par GIMENEZ Paul et ELOIRE Mathis de la Team <strong>FC PHP MAFIA</strong>
+  Projet Nuit de l'Info 2025 par la Team <strong>FC PHP MAFIA</strong>
 </p>
 
 ---
@@ -19,9 +22,9 @@
 ## 📸 Aperçu de l'Interface
 
 <p align="center">
-    <img src="assets/screenshot_1.png" alt="Menu Principal" width="200"/>
-    <img src="assets/screenshot_2.png" alt="Options" width="200"/>
-    <img src="assets/screenshot_3.png" alt="Zoom Mode" width="200"/>
+    <img src="assets/screenshot_1.png" alt="Menu Principal" height="300" style="margin: 0 10px;"/>
+    <img src="assets/screenshot_2.png" alt="Options" height="300" style="margin: 0 10px;"/>
+    <img src="assets/screenshot_3.png" alt="Zoom Mode" height="300" style="margin: 0 10px;"/>
 </p>
 
 ---
@@ -63,19 +66,9 @@ Cette extension n'étant pas encore sur le Chrome Web Store, elle doit être ins
 
 ---
 
-## 💻 Architecture Technique
+Projet réalisé avec ❤️ et beaucoup de ☕ durant la Nuit de l'Info 2025.
 
-Le projet est construit en **Vanilla JS** (Javascript pur) pour garantir une légèreté maximale et aucune dépendance externe.
+Team : FC PHP MAFIA
 
-```text
-platon-web-cleaner/
-├── manifest.json            # Configuration Manifest V3
-├── assets/                  # Logos et Images
-├── interface/               # Le Front-End (Popup & Dashboard)
-│   ├── menu.html            # Structure HTML (Vues coulissantes)
-│   ├── menu.css             # Styles CSS (Design System)
-│   ├── menu.js              # Logique UI & Communication
-│   ├── parametres.html      # Tableau de bord de gestion
-│   └── style-injection.css  # CSS injecté sur les pages (Cadres, Anim)
-└── logique/                 # Le Back-End (Script injecté)
-    └── nettoyeur.js         # Moteur de sélection, Stockage & Algorithme
+GIMENEZ Paul
+ELOIRE Mathis
