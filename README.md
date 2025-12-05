@@ -18,46 +18,17 @@
 
 ## 📸 Aperçu de l'Interface
 
-<img src="assets/screenshot_1.png" alt="Menu Principal" width="200"/>
-<img src="assets/screenshot_2.png" alt="Options" width="200"/>
-<img src="assets/screenshot_3.png" alt="Zoom Mode" width="200"/>
+<p align="center">
+    <img src="assets/screenshot_1.png" alt="Menu Principal" width="200"/>
+    <img src="assets/screenshot_2.png" alt="Options" width="200"/>
+    <img src="assets/screenshot_3.png" alt="Zoom Mode" width="200"/>
+</p>
 
 ---
 
 ## ✨ Guide d'installation
 
 ### 🎯 1. Télécharger le projet 
-
-
-### 🔍 2. Mode Loupe (Accessibilité)
-* **Zoom au clic :** Transforme le curseur en loupe.
-* **Focus :** Cliquez sur un texte ou une image illisible pour l'agrandir (x1.2) et le mettre au premier plan (Cadre Bleu).
-
-### 🎛️ 3. Le Menu "Plus d'options"
-Une interface coulissante (Slide-in) inspirée des applications mobiles permet d'accéder aux outils bonus :
-* **👻 Vision "Rayons X" :** Révèle les zones masquées en semi-transparence (contour violet) pour les retrouver facilement.
-* **⚖️ Mode Avant / Après :** Un bouton unique pour comparer instantanément la page originale et votre version.
-* **⏸️ Pause Temporaire :** Désactivez le nettoyage le temps d'une session sans perdre vos règles.
-
-### 🎨 4. UX/UI Soignée
-* **Navigation Fluide :** Système de "Vues" qui glissent latéralement.
-* **Design System :** Respect de la charte graphique Platon Formation (Violet/Blanc/Gris).
-* **Tableau de Bord :** Une page dédiée pleine page pour gérer et supprimer les règles de chaque site.
-
----
-
-## 🛠️ Installation & Test
-
-Cette extension respecte les standards **Manifest V3** de Google Chrome.
-
-1.  Téléchargez ce projet.
-2.  Ouvrez Google Chrome et allez sur l'URL : `chrome://extensions`.
-3.  Activez le **Mode développeur** (bouton switch en haut à droite).
-4.  Cliquez sur **Charger l'extension non empaquetée** (Load unpacked).
-5.  Sélectionnez le dossier racine du projet `platon-web-cleaner`.
-6.  **Important :** Allez sur un site web (ex: Wikipedia) et rafraîchissez la page (`F5`) pour activer le script.
-
----
 
 ## 💻 Architecture Technique
 
