@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="assets/logoplaton.png" alt="Logo Platon Formation" width="150" style="margin: 0 30px;" />
+  <img src="assets/logo_grand_platon.png" alt="Logo Platon Formation" width="150" style="margin: 0 30px;" />
   <img src="assets/logo_ndi.png" alt="Logo NDI 2025" width="150" style="margin: 0 30px;" />
 </p>
 
 <p align="center">
   <strong>Nettoyez le web comme VOUS l'entendez !</strong><br>
-  Projet Nuit de l'Info 2025 par la Team <strong>FC PHP MAFIA</strong>
+  Projet Nuit de l'Info 2025 par GIMENEZ Paul et ELOIRE Mathis de la Team <strong>FC PHP MAFIA</strong>
 </p>
 
 ---
@@ -25,12 +25,10 @@
 
 ---
 
-## ✨ Fonctionnalités
+## ✨ Guide d'installation
 
-### 🎯 1. Nettoyage Chirurgical (Core)
-* **Sélection Visuelle :** Un mode "Viseur" met en surbrillance les éléments au survol (Cadre Rouge).
-* **Suppression Fluide :** Un clic supprime l'élément (pub, bannière, pop-up) avec une animation de désintégration.
-* **Persistance Intelligente :** L'extension mémorise vos choix par domaine. Revenez demain, la page sera toujours propre.
+### 🎯 1. Télécharger le projet 
+
 
 ### 🔍 2. Mode Loupe (Accessibilité)
 * **Zoom au clic :** Transforme le curseur en loupe.
