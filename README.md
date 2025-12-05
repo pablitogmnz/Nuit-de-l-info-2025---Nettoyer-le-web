@@ -1,10 +1,8 @@
 <p align="center">
-  <img src="assets/image_1.png" alt="Logo Platon Formation" width="150" style="margin: 0 20px;" />
-  <img src="assets/image_0.png" alt="Platon Web Cleaner" width="200" style="margin: 0 20px;" />
-  <img src="assets/image_5.png" alt="FC PHP MAFIA" width="150" style="margin: 0 20px;" />
+  <img src="assets/logoplanton.png" alt="Logo Platon Formation" width="150" style="margin: 0 20px;" />
+  <img src="assets/logo_fcpmafia.png" alt="Platon Web Cleaner" width="200" style="margin: 0 20px;" />
+  <img src="assets/logoiutbayonne.png" alt="FC PHP MAFIA" width="150" style="margin: 0 20px;" />
 </p>
-
-<h1 align="center">🧹 Platon Web Cleaner</h1>
 
 <p align="center">
   <strong>Nettoyez le web comme VOUS l'entendez !</strong><br>
@@ -18,18 +16,6 @@
   <img src="https://img.shields.io/badge/Chrome-Extension-google.svg?style=for-the-badge" alt="Chrome Extension">
   <img src="https://img.shields.io/badge/Made%20with-Vanilla%20JS-f7df1e.svg?style=for-the-badge" alt="Vanilla JS">
 </p>
-
----
-# 🧹 Platon Web Cleaner
-
-> **Défi Nuit de l'Info 2025** : "Nettoyez le web comme VOUS l'entendez !"
-> **Team :** FC PHP MAFIA
-
-![Version](https://img.shields.io/badge/version-1.0.0-blueviolet.svg?style=for-the-badge) ![Chrome](https://img.shields.io/badge/Chrome-Extension-google.svg?style=for-the-badge) ![Tech](https://img.shields.io/badge/Made%20with-Vanilla%20JS-yellow.svg?style=for-the-badge)
-
-**Platon Web Cleaner** redéfinit votre expérience de navigation. Plus qu'un simple bloqueur, c'est un outil de remodelage qui vous permet de supprimer les nuisances visuelles, de zoomer sur l'essentiel et de sauvegarder vos préférences par site.
-
----
 
 ## 📸 Aperçu de l'Interface
 
