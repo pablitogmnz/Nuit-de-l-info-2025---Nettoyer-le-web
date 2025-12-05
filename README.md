@@ -56,10 +56,35 @@ Cette extension n'étant pas encore sur le Chrome Web Store, elle doit être ins
 5.  Passez votre souris sur la page : les éléments s'encadrent en **Rouge**.
 6.  **Cliquez** pour supprimer un élément !
 
-### 🕵️ Tester les Bonus
-1.  Dans le menu de l'extension, cliquez sur **"Plus d'options >"**.
-2.  Activez le **Mode Loupe** : le cadre devient **Bleu**. Cliquez sur un texte pour l'agrandir.
-3.  Cochez **Voir zones masquées** pour voir en transparence ce que vous avez supprimé.
+## ✨ Fonctionnalités Détaillées
+
+Cette extension repose sur deux modes principaux et une suite d'outils avancés pour redonner le contrôle à l'utilisateur.
+
+### 🧹 1. Le Mode Nettoyage (Switch Principal)
+C'est le cœur de l'extension. Il permet de supprimer définitivement les nuisances visuelles.
+* **Fonctionnement :** Activez le switch. Les éléments survolés s'encadrent en **ROUGE**.
+* **Action :** Un simple clic pulvérise l'élément (publicité, bannière cookie, pop-up, menu inutile).
+* **Persistance :** L'extension possède une mémoire. Si vous nettoyez *Wikipedia* aujourd'hui, il sera toujours propre demain.
+
+### 🔍 2. Le Mode Loupe (Accessibilité)
+Pensé pour faciliter la lecture sans modifier la mise en page globale du site.
+* **Fonctionnement :** Activez-le dans le menu "Plus d'options". Les éléments s'encadrent en **BLEU**.
+* **Action :** Cliquez sur un paragraphe, une image ou un tableau. L'élément s'agrandit (**x1.2**) et passe au premier plan avec un fond blanc pour une lisibilité parfaite.
+* **Annulation :** Un second clic remet l'élément à sa taille normale.
+
+### 🎛️ 3. Les Outils Avancés
+Cachés dans le menu tiroir pour ne pas surcharger l'interface :
+
+* **👻 Vision "Rayons X" (Voir zones masquées) :**
+    * Vous avez supprimé un élément par erreur ? Pas de panique.
+    * Cochez cette case pour faire réapparaître les éléments supprimés en **transparence (fantôme)** avec une bordure violette pointillée.
+    
+* **⚖️ Comparaison Avant / Après :**
+    * Un bouton unique pour désactiver instantanément tous les effets de l'extension.
+    * Idéal pour montrer la différence entre le site "pollué" d'origine et votre version propre.
+
+* **⏸️ Pause Temporaire :**
+    * Désactivez le nettoyage le temps d'une session sans perdre vos configurations sauvegardées.
 
 ---
 
