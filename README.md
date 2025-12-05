@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="assets/logo_grand_platon.png" alt="Logo Platon Formation" height="200" style="margin: 0 20px;" />
-  <img src="assets/logo_ndi.png" alt="Logo Nuit de l'Info" height="200" style="margin: 0 20px;" />
+  <img src="assets/logo_grand_platon.png" alt="Logo Platon Formation" height="150" style="margin: 0 30px;" />
+  <img src="assets/logo_ndi.png" alt="Logo Nuit de l'Info" height="150" style="margin: 0 30px;" />
 </p>
 
 <p align="center">
@@ -19,7 +19,7 @@
 ## 📸 Aperçu de l'Interface
 
 <p align="center">
-    <img src="assets/screenshot_1.png" alt="Menu Principal" height="300" style="margin: 0 10px;"/>
+    <img src="assets/screenshot_1.png" alt="Menu Principal" height="300"/>
     <img src="assets/screenshot_2.png" alt="Options" height="300" style="margin: 0 10px;"/>
     <img src="assets/screenshot_3.png" alt="Zoom Mode" height="300" style="margin: 0 10px;"/>
 </p>
