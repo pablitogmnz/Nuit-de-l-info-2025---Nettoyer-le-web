@@ -18,10 +18,9 @@
 
 ## 📸 Aperçu de l'Interface
 
-| Menu Principal | Options Avancées | Mode Loupe (Zoom) |
-|:---:|:---:|:---:|
-| <img src="assets/demo-menu.png" alt="Menu Principal" width="200"/> | <img src="assets/demo-options.png" alt="Options" width="200"/> | <img src="assets/demo-zoom.png" alt="Zoom Mode" width="200"/> |
-> *(Pensez à ajouter vos propres captures d'écran dans le dossier assets/)*
+<img src="assets/screenshot_1.png" alt="Menu Principal" width="200"/>
+<img src="assets/screenshot_2.png" alt="Options" width="200"/>
+<img src="assets/screenshot_3.png" alt="Zoom Mode" width="200"/>
 
 ---
 
