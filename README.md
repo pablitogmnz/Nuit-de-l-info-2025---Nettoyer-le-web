@@ -75,9 +75,9 @@ Pensé pour faciliter la lecture sans modifier la mise en page globale du site.
 ### 🎛️ 3. Les Outils Avancés
 Cachés dans le menu tiroir pour ne pas surcharger l'interface :
 
-* **👻 Vision "Rayons X" (Voir zones masquées) :**
+* **👻 Voir les zones masquées :**
     * Vous avez supprimé un élément par erreur ? Pas de panique.
-    * Cochez cette case pour faire réapparaître les éléments supprimés en **transparence (fantôme)** avec une bordure violette pointillée.
+    * Cochez la case "Plus d'options > Voir zones masquées" pour faire réapparaître les éléments supprimés en **transparence (fantôme)**.
     
 * **⚖️ Comparaison Avant / Après :**
     * Un bouton unique pour désactiver instantanément tous les effets de l'extension.
