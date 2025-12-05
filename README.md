@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="assets/logo_grand_platon.png" alt="Logo Platon Formation" height="100" style="margin: 0 20px;" />
-  <img src="assets/logo_ndi.png" alt="Logo Nuit de l'Info" height="100" style="margin: 0 20px;" />
+  <img src="assets/logo_grand_platon.png" alt="Logo Platon Formation" height="200" style="margin: 0 20px;" />
+  <img src="assets/logo_ndi.png" alt="Logo Nuit de l'Info" height="200" style="margin: 0 20px;" />
 </p>
 
 <p align="center">
