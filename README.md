@@ -1,7 +1,7 @@
 <p align="center">
-  <img src="assets/logoplanton.png" alt="Logo Platon Formation" width="150" style="margin: 0 20px;" />
-  <img src="assets/logo_fcphpmafia.png" alt="Platon Web Cleaner" width="200" style="margin: 0 20px;" />
-  <img src="assets/logoiutbayonne.png" alt="FC PHP MAFIA" width="150" style="margin: 0 20px;" />
+  <img src="assets/logoplaton.png" alt="Logo Platon Formation" width="150" style="margin: 0 30px;" />
+  <img src="assets/logo_fcphpmafia.png" alt="Platon Web Cleaner" width="150" style="margin: 0 30px;" />
+  <img src="assets/logoiutbayonne.png" alt="FC PHP MAFIA" width="150" style="margin: 0 30px;" />
 </p>
 
 <p align="center">
