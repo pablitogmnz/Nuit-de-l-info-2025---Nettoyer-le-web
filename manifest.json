@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Platon Web Cleaner",
+    "name": "Platon Nettoyeur Web",
     "version": "1.0",
-    "description": "Nettoyez le web comme VOUS l'entandez !",
+    "description": "Nettoyez le web comme VOUS l'entendez !\nhttps://github.com/pablitogmnz/Nuit-de-l-info-2025---Nettoyer-le-web",
     "permissions": [
         "storage",
         "activeTab",

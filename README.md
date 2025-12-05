@@ -67,5 +67,4 @@ Projet réalisé avec ❤️ et beaucoup de ☕ durant la Nuit de l'Info 2025.
 
 Team : FC PHP MAFIA
 
-GIMENEZ Paul
-ELOIRE Mathis
+GIMENEZ Paul et ELOIRE Mathis de l'IUT Informatique de Bayonne et du Pays-Basque.
